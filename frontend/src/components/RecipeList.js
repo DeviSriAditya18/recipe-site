@@ -13,7 +13,7 @@ const RecipeList = () => {
 
   const fetchRecipes = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/recipes');
+      const res = await axios.get('https://recipe-site-backend-8epd.onrender.com/api/recipes');
       setRecipes(res.data);
     } catch (err) {
       console.error('Error fetching recipes:', err);
@@ -26,7 +26,7 @@ const RecipeList = () => {
       return;
     }
     try {
-      const res = await axios.get(`http://localhost:5000/api/recipes/${encodeURIComponent(searchTerm)}`);
+      const res = await axios.get(`https://recipe-site-backend-8epd.onrender.com/api/recipes/${encodeURIComponent(searchTerm)}`);
       setRecipes([res.data]); // Display the single recipe found
     } catch (err) {
       console.error('Error searching recipe:', err);
@@ -36,7 +36,7 @@ const RecipeList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/recipes/${id}`);
+      await axios.delete(`https://recipe-site-backend-8epd.onrender.com/api/recipes/${id}`);
       setRecipes(recipes.filter((recipe) => recipe._id !== id));
     } catch (err) {
       console.error('Error deleting recipe:', err);
