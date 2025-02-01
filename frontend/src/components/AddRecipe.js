@@ -12,7 +12,7 @@ const AddRecipe = () => {
     e.preventDefault();
     const newRecipe = { name, ingredients: ingredients.split(','), instructions };
     try {
-      await axios.post('http://localhost:5000/api/recipes', newRecipe);
+      await axios.post('https://recipe-site-backend-8epd.onrender.com/api/recipes', newRecipe);
       alert('Recipe added successfully!');
       setName('');
       setIngredients('');
