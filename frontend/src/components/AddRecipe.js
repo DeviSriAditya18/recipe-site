@@ -1,7 +1,7 @@
 // frontend/src/components/AddRecipe.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import "./addRecipe.css"
+import "./addRecipe.css";
 
 const AddRecipe = () => {
   const [name, setName] = useState('');
